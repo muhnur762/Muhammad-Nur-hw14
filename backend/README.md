@@ -1,128 +1,38 @@
-- lakukan installasi dependencies
-- pastikan memiliki docker
-- pastikan memiliki docker-compose
-- jalankan perintah `docker-compose up -d`
-- install dependencies dengan perintah `yarn install`
-- lakukan migrasi database dengan perintah `yarn migrate`
-- jalankan perintah `yarn prisma generate`
-- jalankan perintah `yarn start`
-- untuk mengambil file dari upload, maka dapat diakses dengan `http://localhost:8000/uploads/{nama_file}`
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-**Endpoint**
+## Getting Started
 
+First, run the development server:
 
-# POST /register
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+```
 
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Endpoint untuk mendaftarkan pengguna baru.
+You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-## Request Body
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-name (string) : Nama lengkap pengguna.
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-email (string) : Alamat email pengguna.
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-password (string) : Password pengguna.
+## Learn More
 
-## Response
+To learn more about Next.js, take a look at the following resources:
 
-user (object) : Objek pengguna yang baru saja dibuat.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-# POST /login
-Endpoint untuk melakukan autentikasi pengguna
+## Deploy on Vercel
 
-## Request Body
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-email (string) : Alamat email pengguna.
-
-password (string) : Password pengguna.
-
-## Response
-token (string) : Token autentikasi yang dihasilkan.
-
-
-# POST /books
-
-Endpoint untuk membuat buku baru.
-
-## Request Headers
-
- Authorization (string) : Token autentikasi.
-## Request Body
- (Multi-part Form)
-title (string) : Judul buku.
-
-author (string) : Nama penulis buku.
-
-publisher (string) : Nama penerbit buku.
-
-year (string) : Tahun terbit buku.
-
-pages (string) : Jumlah halaman buku.
-
-image (file) : Gambar sampul buku.
-
-### Response
-
-book (object) : Objek buku yang baru saja dibuat.
-
-# GET /books
-Endpoint untuk mengambil semua buku yang tersedia.
-
-### Response
-
-books (array) : Kumpulan objek buku yang tersedia.
-
-# PUT /books/:id
-Endpoint untuk mengubah data buku.
-
-## Request Headers
-
-Authorization (string) : Token autentikasi.
-
-## Request Parameters
-
-id (number) : ID buku yang akan diubah.
-Request Body
-
-title (string) : Judul buku.
-
-author (string) : Nama penulis buku.
-
-publisher (string) : Nama penerbit buku.
-
-year (string) : Tahun terbit buku.
-
-pages (string) : Jumlah halaman buku.
-## Response
-
-book (object) : Objek buku yang telah diubah.
-
-# DELETE /books/:id
-Endpoint untuk menghapus buku.
-
-## Request Headers
-
-Authorization (string) : Token autentikasi.
-## Request Parameters
-
-id (number) : ID buku yang akan dihapus.
-
-### Response
-
-book (object) : Objek buku yang telah dihapus.
-
-
-# GET /books/:id
-Endpoint untuk mendapatkan detail buku berdasarkan ID.
-
-## Request Headers
-
-## Request Parameters
-
-id (number) : ID buku .
-
-### Response
-
-book (object) : Objek buku yang .
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
