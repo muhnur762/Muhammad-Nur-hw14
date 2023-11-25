@@ -1,0 +1,5 @@
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=muhammadnur7602
+POSTGRES_DB=db
+JWT_SECRET=key123
+DATABASE_URL="postgresql://postgres:muhammadnur7602@localhost:5432/db"
